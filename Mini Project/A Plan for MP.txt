@@ -1,0 +1,47 @@
+Simulator Superclass:
+
+[Start] - so begin the simulation.
+[Quit] - to quit the simulation (before it has started, will be the same function as during the simulation).
+
+[Trade] - to open the 'trading floor'
+[Player Stats] - to present the player with some statistics (Total , Total Share Value, Total 
+[Quit] - to quit the simulation (user will be asked: "Are you sure you want to end the simulation?").
+
+****************************************************************************************
+
+Companies Subclass:
+
+8 companies
+{Name, Symbol, PricePerShare, ValueChange, Change percentage, (Graph)}
+
+Companies stored in an arraylist.
+
+
+Each time new data is presented to the user, a variable (stockValueCounter) will increment. The new data will then be saved in a 
+Arraylist to store arraylists (companyValueArrayList)
+
+Arraylists of previous values will be used to make trend graph (level 7?).
+Graph icon to be clicked for larger image.
+
+(IN CASE DATA CANNOT BE BROUGHT FROM WALL STREET:
+New values produced each turn (max 5% increase or decrease)
+Random number picked from 0-100:  0 = No change (chance is <1%), 1-50 = 0.1-5.0% change positively, 51-100 = 0.1-5.0% change negatively.)
+
+****************************************************************************************
+
+Player Subclass:
+
+String Name
+Float startingBalance
+Float currentBalance
+
+
+
+
+****************************************************************************************
+
+StockMarket Subclass:
+
+Player will be presented with new data from companies.
+{Name, Symbol, PricePerShare, ValueChange, Change percentage, (graph), [Buy], [Sell], ([Sell Short])}
+
