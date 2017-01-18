@@ -7,11 +7,39 @@
  */
 public class Simulator
 {
+    
+    
+    
     public static void main()
     {
-        StockMarket currentMarket = new StockMarket(); //Creates entire stock market
-        Player user = new Player(); //Creates new player for user
+        Menus menuController = new Menus();
+        int userInput;
+        boolean loop = true;
         
-        currentMarket.printCompanyList(); //currentMarket Object prints all companies within the market
+        while (loop)  //   <<<--- ha!
+        { 
+            userInput = menuController.startMenuList();
+            switch (userInput)
+            {
+                case 1:
+                    Player user = new Player();
+                    StockMarket market = new StockMarket();
+                    break;
+                case 2:
+                    System.out.println("Come Back Later...");
+                    break;
+                case 3:
+                    menuController.howToPlay();
+                    break;
+                case 4:
+                    loop = false;
+                    System.out.println("GAME ENDED");
+                    break;
+                default:
+                    System.out.println("Option not valid");
+            }
+        }
     }
+        
+
 }

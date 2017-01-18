@@ -11,15 +11,16 @@ public class StockCompany
 {
     public String companyName;
     public String companySymbol;
-    public float currentValue;
+    public float sharePrice;
     public float valueChange;
     public float percentageChange;
     
-    String ArrayList<> CompanyOneValues = new String ArrayList;
-    public StockCompany(String Name, float Value)
+    ArrayList<String> CompanyOneValues = new ArrayList<String>();
+    public StockCompany(String Name, String Symbol, float Value)
     {
         companyName = Name;
-        currentValue = Value;
-       
+        companySymbol = Symbol;
+        sharePrice = Value;
+        
     }
 }

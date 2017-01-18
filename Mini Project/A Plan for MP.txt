@@ -1,13 +1,17 @@
+
 Simulator Superclass:
 
 [Start] - so begin the simulation.
+[How to play] - give the user a quick tutorial on how the simulator works (Extra: use new window for each step, use images)
+[Load Game] - open saved file. (I/O needs to be used.)
 [Quit] - to quit the simulation (before it has started, will be the same function as during the simulation).
 
 [Trade] - to open the 'trading floor'
-[Player Stats] - to present the player with some statistics (Total , Total Share Value, Total 
+[Player Stats] - to present the player with some statistics (Bank Balance, Total Share Value, Total Worth, Profits) 
 [Quit] - to quit the simulation (user will be asked: "Are you sure you want to end the simulation?").
+[Save] - optional button to allow the user to return after shutting down program. (save Name, bankBalance, shares, startingBalance.)
 
-****************************************************************************************
+********************************************************************************************************************************
 
 Companies Subclass:
 
@@ -15,6 +19,8 @@ Companies Subclass:
 {Name, Symbol, PricePerShare, ValueChange, Change percentage, (Graph)}
 
 Companies stored in an arraylist.
+Symbols stored in an arraylist.
+
 
 
 Each time new data is presented to the user, a variable (stockValueCounter) will increment. The new data will then be saved in a 
@@ -27,21 +33,23 @@ Graph icon to be clicked for larger image.
 New values produced each turn (max 5% increase or decrease)
 Random number picked from 0-100:  0 = No change (chance is <1%), 1-50 = 0.1-5.0% change positively, 51-100 = 0.1-5.0% change negatively.)
 
-****************************************************************************************
+********************************************************************************************************************************
 
 Player Subclass:
 
-String Name
-Float startingBalance
-Float currentBalance
+String name (enter name method)
+float startingBalance (pick amount, increases bankBalance by amount)
+float bankBalance (starts at startingBalance. decreases when shares bought, increases when sold.)
+float totalShareValue (SUM: shares owned x value, for each company.)
+float totalWorth (totalShareValue + bankBalance)
+float profits (totalShareValue - startingBalance)
 
 
 
-
-****************************************************************************************
+********************************************************************************************************************************
 
 StockMarket Subclass:
 
 Player will be presented with new data from companies.
-{Name, Symbol, PricePerShare, ValueChange, Change percentage, (graph), [Buy], [Sell], ([Sell Short])}
+{companyName, companySymbol, sharePrice, valueChange, percentageChange, (graph), [Buy], [Sell], ([Sell Short])}
 

@@ -11,11 +11,8 @@ public class Player
     public Player()
     {
         String Name = playerName();
-        System.out.println(Name);
         int bankBalance = startingBalance();
     }
-    
-    
     
     public String playerName()
     {

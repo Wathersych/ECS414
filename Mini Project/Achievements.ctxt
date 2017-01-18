@@ -2,7 +2,13 @@
 comment0.params=
 comment0.target=void\ initiateAchievementList()
 comment1.params=
-comment1.target=void\ initiateRequirementList()
+comment1.target=void\ initiateRequirementListPrinted()
 comment2.params=
-comment2.target=void\ InitiateAchievedList()
-numComments=3
+comment2.target=void\ initiateRequirementListValue()
+comment3.params=profits\ shareCompaniesOwnedAmount
+comment3.target=void\ updateAchievedList(float,\ int)
+comment4.params=shareCompaniesOwnedAmount\ companySharesOwned
+comment4.target=int\ changeShareCompaniesOwnedAmount(int,\ int[])
+comment5.params=
+comment5.target=void\ initiateAchievedList()
+numComments=6
