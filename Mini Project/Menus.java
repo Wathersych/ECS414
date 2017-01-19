@@ -36,17 +36,24 @@ public class Menus
         
         return startMenuUserInput;
     }
-
-
+    
+    public int adminMenuList()
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("What would you like to do?");
+        System.out.println("\t1. Add Company");
+        System.out.println("\t2. Remove Comany");
+        System.out.println("\t3. View Company List");
+        int userInput = scan.nextInt();
+        
+        return userInput;
+    }
     
     public void howToPlay()
     {
-        //how to play.....   
+        System.out.println("This will contain a detailed tutorial for the user.");
     }
 
-    
-    
-    
     
     public int interactTradingMenu()
     {

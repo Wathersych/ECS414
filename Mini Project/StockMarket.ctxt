@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.params=
 comment0.target=StockMarket()
-comment0.text=public\ void\ sharesAchievement()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ for\ (int\ i\ \=\ 0;\ i<\=7;\ i++)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ achievedList[i]\ \=\ false;\ //No\ shares\ have\ been\ bought\ at\ the\ start\ of\ the\ simulation\r\n\ \ \ \ \ \ \ \ }\r\n}
 comment1.params=
 comment1.target=void\ printCompanyList()
 comment2.params=
 comment2.target=void\ addCompany()
-numComments=3
+comment3.params=
+comment3.target=void\ removeCompany()
+numComments=4

@@ -22,8 +22,9 @@ public class Simulator
             switch (userInput)
             {
                 case 1:
-                    Player user = new Player();
                     StockMarket market = new StockMarket();
+                    Player user = new Player(market);
+                    user.controlLoop();
                     break;
                 case 2:
                     System.out.println("Come Back Later...");

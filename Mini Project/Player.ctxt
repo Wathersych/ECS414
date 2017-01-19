@@ -1,8 +1,10 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Player()
+comment0.params=userMarket
+comment0.target=Player(StockMarket)
 comment1.params=
 comment1.target=java.lang.String\ playerName()
 comment2.params=
 comment2.target=int\ startingBalance()
-numComments=3
+comment3.params=
+comment3.target=void\ controlLoop()
+numComments=4

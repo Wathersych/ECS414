@@ -11,15 +11,8 @@ import java.util.ArrayList;
 public class StockMarket
 {
     private ArrayList<StockCompany> companies = new ArrayList<StockCompany>(); // Dynamic size list for storage of companies
-    boolean [] ownSharesAchievement = new boolean [8];
-    /*public void sharesAchievement()
-    {
-        for (int i = 0; i<=7; i++)
-        {
-            achievedList[i] = false; //No shares have been bought at the start of the simulation
-        }
-    }*/
-    
+    //boolean [] ownSharesAchievement = new boolean [8];
+        
     public StockMarket() // Constructor
     {
         for(int i = 0; i < 8; i++) //For loop generates companies at creation of stock market
@@ -51,10 +44,32 @@ public class StockMarket
         String symbol = scan.nextLine();
         System.out.println("What is the company's current stock value?");
         float value = scan.nextFloat();
-        StockCompany newCo = new StockCompany(name, symbol, value);
-        companies.add(newCo);
+        StockCompany newCo = new StockCompany(name, symbol, value);//create company
+        companies.add(newCo);// add to arraylist
+        scan.close();
     }
     
-
+    public void removeCompany()
+    {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Select a company you wish to delete:");
+        for(int i = 0; i < companies.size(); i++) //For loop used to print entire companies array
+        {
+            System.out.println((i+1) + companies.get(i).companyName); // Gets the name of the company in place i
+        }
+        int userInput = scan.nextInt();
+        try
+        {
+            companies.remove(userInput-1);
+        }
+        catch(IndexOutOfBoundsException e)
+        {
+            System.out.println("That was not a valid option.");
+        }
+        
+               
+    }
 }
+
 

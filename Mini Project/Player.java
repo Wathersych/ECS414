@@ -8,10 +8,16 @@
 import java.util.Scanner;
 public class Player
 {
-    public Player()
+    public String name;
+    private float bankBalance;
+    public StockMarket market;
+    private Menus menuController = new Menus();
+    
+    public Player(StockMarket userMarket)
     {
-        String Name = playerName();
-        int bankBalance = startingBalance();
+        name = playerName();
+        bankBalance = startingBalance();
+        market = userMarket;
     }
     
     public String playerName()
@@ -61,5 +67,31 @@ public class Player
         
         scan.close();
         return balance;
+    }
+    
+    public void controlLoop()
+    {
+        boolean quit = false;
+        while(!quit)
+        {
+            int userChoice = menuController.adminMenuList();
+            switch (userChoice)
+            {
+                case 1:
+                    market.addCompany();
+                    break;
+                case 2:
+                    market.removeCompany();
+                    break;
+                case 3:
+                    market.printCompanyList();
+                    break;
+                case 4:
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("The selection you made was not valid.");
+            }
+        }
     }
 }
