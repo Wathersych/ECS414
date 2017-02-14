@@ -1,16 +1,10 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ menu()
+comment0.target=int\ startMenuList()
 comment1.params=
-comment1.target=void\ welcomeMessage()
+comment1.target=void\ gameMenuList()
 comment2.params=
-comment2.target=int\ startMenuList()
+comment2.target=void\ adminMenuList()
 comment3.params=
-comment3.target=int\ adminMenuList()
-comment4.params=
-comment4.target=void\ howToPlay()
-comment5.params=
-comment5.target=int\ interactTradingMenu()
-comment6.params=simMenuUserInput
-comment6.target=void\ checkSimMainMenuInput(int)
-numComments=7
+comment3.target=void\ howToPlay()
+numComments=4

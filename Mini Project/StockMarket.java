@@ -1,4 +1,4 @@
-
+ 
 /**
  * Write a description of class StockMarket here.
  * 
@@ -22,7 +22,6 @@ public class StockMarket
             StockCompany newCo = new StockCompany(newCoName,newCoSymbol, i*246);
             companies.add(newCo); // Adds each company to the ArrayList
         }
-        printCompanyList();
     }
     
     public void printCompanyList()
@@ -45,7 +44,7 @@ public class StockMarket
         System.out.println("What is the company's current stock value?");
         float value = scan.nextFloat();
         StockCompany newCo = new StockCompany(name, symbol, value);//create company
-        companies.add(newCo);// add to arraylist
+        companies.add(newCo);// add co to arraylist
         scan.close();
     }
     

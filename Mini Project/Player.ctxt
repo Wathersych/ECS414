@@ -1,10 +1,16 @@
 #BlueJ class context
-comment0.params=userMarket
-comment0.target=Player(StockMarket)
-comment1.params=
-comment1.target=java.lang.String\ playerName()
+comment0.params=user
+comment0.target=Player(Player)
+comment1.params=userMarket
+comment1.target=Player(StockMarket)
 comment2.params=
-comment2.target=int\ startingBalance()
+comment2.target=java.lang.String\ playerName()
 comment3.params=
-comment3.target=void\ controlLoop()
-numComments=4
+comment3.target=void\ adminSetBalance()
+comment4.params=
+comment4.target=int\ startingBalance()
+comment5.params=
+comment5.target=void\ controlLoop()
+comment6.params=adminPassword
+comment6.target=boolean\ adminPasswordCheck(java.lang.String)
+numComments=7

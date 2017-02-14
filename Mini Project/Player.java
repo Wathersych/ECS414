@@ -9,9 +9,16 @@ import java.util.Scanner;
 public class Player
 {
     public String name;
-    private float bankBalance;
+    protected double bankBalance;
     public StockMarket market;
-    private Menus menuController = new Menus();
+    protected Menus menuController = new Menus();
+    
+    public Player(Player user) //Used for duplicating a user, and overwriting into a new instance
+    {
+        name = user.name;
+        bankBalance = user.bankBalance;
+        market = user.market;
+    }
     
     public Player(StockMarket userMarket)
     {
@@ -27,6 +34,16 @@ public class Player
         String userInput = scan.nextLine();  // will save the user input in a variable
         scan.close();
         return userInput;  //returns the variable to Name in Player()
+    }
+    
+    public void adminSetBalance()
+    {
+        Scanner scan = new Scanner(System.in);
+                
+        System.out.println("");
+        System.out.println("Enter new bank balance:");
+        
+        double userInput = scan.nextDouble();
     }
     
     public int startingBalance()
@@ -74,24 +91,64 @@ public class Player
         boolean quit = false;
         while(!quit)
         {
-            int userChoice = menuController.adminMenuList();
+            Scanner scan = new Scanner(System.in);
+            int userChoice = 0;
+            
+            System.out.println("Main Menu");
+            System.out.println("");
+            menuController.gameMenuList();
+            
+            userChoice = scan.nextInt();
+            
             switch (userChoice)
             {
                 case 1:
-                    market.addCompany();
+                    //buy stocks
                     break;
                 case 2:
-                    market.removeCompany();
+                    //sell stocks
                     break;
                 case 3:
-                    market.printCompanyList();
+                    System.out.println(bankBalance);
                     break;
                 case 4:
-                    quit = true;
+                    //save game to file
                     break;
+                case 5:
+                    //quit to main menu
+                    break;
+                case 6:
+                    //boolean password = adminPasswordCheck(adminPassword);
+                    //if (password)
+                    //{
+                        //enter admin's control loop
+                    //}
+                    break;      
                 default:
                     System.out.println("The selection you made was not valid.");
             }
+            scan.close();
         }
+        
+    }
+    
+    public boolean adminPasswordCheck(String adminPassword)
+    {
+        Scanner scan = new Scanner(System.in);
+        boolean valid = false;
+        System.out.println("Enter the password for admin mode:");
+        String userinput = scan.nextLine();
+        if (userinput == adminPassword)
+        {
+            valid = true;
+        }
+        else 
+        {
+            valid = false;
+        }
+        
+        scan.close();
+        
+        return valid;
     }
 }
