@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=hPower\ wght\ aDyno
+comment0.target=Vehicle(double,\ double,\ double)
+comment1.params=
+comment1.target=double\ acceleration()
+comment2.params=
+comment2.target=double\ getHorsepower()
+comment3.params=
+comment3.target=double\ getAerodynamics()
+comment4.params=
+comment4.target=double\ getWeight()
+numComments=5

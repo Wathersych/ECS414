@@ -6,12 +6,14 @@
  * @version (a version number or a date)
  */
 import java.util.Scanner;
-public class Player
+public class Player extends User
 {
     public String name;
     protected double bankBalance;
     public StockMarket market;
-    protected Menus menuController = new Menus();
+    public Menus menuController = new Menus();
+    String adminPassword = "admin";
+    
     
     public Player(Player user) //Used for duplicating a user, and overwriting into a new instance
     {
@@ -20,7 +22,7 @@ public class Player
         market = user.market;
     }
     
-    public Player(StockMarket userMarket)
+    public Player(StockMarket userMarket) //Used for creating a new account from scratch
     {
         name = playerName();
         bankBalance = startingBalance();
@@ -36,14 +38,26 @@ public class Player
         return userInput;  //returns the variable to Name in Player()
     }
     
-    public void adminSetBalance()
+     public void printUserInformation()
+    {
+        System.out.println("");
+        System.out.println("Player Details:");
+        System.out.println("");
+        System.out.println(name);
+        System.out.println(bankBalance);
+    }
+    
+    public double adminSetBalance()
     {
         Scanner scan = new Scanner(System.in);
                 
         System.out.println("");
         System.out.println("Enter new bank balance:");
-        
+                
         double userInput = scan.nextDouble();
+        scan.close();
+        
+        return userInput;
     }
     
     public int startingBalance()
@@ -61,94 +75,31 @@ public class Player
             
             if (userInput == 1)
             {
-                balance = 20000;
-                valid = false;
+                balance = 20000;//bankBalance will be set to 20K
+                valid = false;//while loop ends
             } 
             else if (userInput == 2)
             {
-                balance = 30000;
-                valid = false;
+                balance = 30000;//bankBalance will be set to 30K
+                valid = false;//while loop ends
             }
             else if (userInput == 3)
             {
-                balance = 40000;
-                valid = false;
+                balance = 40000;//bankBalance will be set to 40k
+                valid = false;//while loop ends
             }
-            else
+            else //in case of unrecognised inputs, display error message
             {
                 System.out.println("");
                 System.out.println("The value entered does not match any of the options available.");
                 System.out.println("");
             }
         }
+        System.out.println("");
+        System.out.println("Your bank balance is £" + balance);
+        System.out.println("");
         
-        scan.close();
+        scan.close();//close scanner
         return balance;
-    }
-    
-    public void controlLoop()
-    {
-        boolean quit = false;
-        while(!quit)
-        {
-            Scanner scan = new Scanner(System.in);
-            int userChoice = 0;
-            
-            System.out.println("Main Menu");
-            System.out.println("");
-            menuController.gameMenuList();
-            
-            userChoice = scan.nextInt();
-            
-            switch (userChoice)
-            {
-                case 1:
-                    //buy stocks
-                    break;
-                case 2:
-                    //sell stocks
-                    break;
-                case 3:
-                    System.out.println(bankBalance);
-                    break;
-                case 4:
-                    //save game to file
-                    break;
-                case 5:
-                    //quit to main menu
-                    break;
-                case 6:
-                    //boolean password = adminPasswordCheck(adminPassword);
-                    //if (password)
-                    //{
-                        //enter admin's control loop
-                    //}
-                    break;      
-                default:
-                    System.out.println("The selection you made was not valid.");
-            }
-            scan.close();
-        }
-        
-    }
-    
-    public boolean adminPasswordCheck(String adminPassword)
-    {
-        Scanner scan = new Scanner(System.in);
-        boolean valid = false;
-        System.out.println("Enter the password for admin mode:");
-        String userinput = scan.nextLine();
-        if (userinput == adminPassword)
-        {
-            valid = true;
-        }
-        else 
-        {
-            valid = false;
-        }
-        
-        scan.close();
-        
-        return valid;
     }
 }

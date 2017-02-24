@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ startGameLoop()
+comment1.params=
+comment1.target=void\ controlLoop()
+comment2.params=adminPassword
+comment2.target=boolean\ adminPasswordCheck(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ getAdminPasswordIn()
+numComments=4

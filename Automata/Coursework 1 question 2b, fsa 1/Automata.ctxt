@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=A
+comment1.target=boolean[][]\ e_closure(Automata.FSAe)
+comment10.params=A\ name
+comment10.target=void\ print_FSAe(Automata.FSAe,\ java.lang.String)
+comment11.params=i
+comment11.target=Automata.FSAe\ get_example(int)
+comment2.params=A
+comment2.target=Automata.FSAe\ e_remove(Automata.FSAe)
+comment3.params=trRel\ src\ let\ trg
+comment3.target=int[][]\ add_transition(int[][],\ int,\ int,\ int)
+comment4.params=finals\ st
+comment4.target=int[]\ add_final(int[],\ int)
+comment5.params=A\ st
+comment5.target=boolean\ is_final(Automata.FSAe,\ int)
+comment6.params=A
+comment6.target=java.lang.String\ check_FSAe(Automata.FSAe)
+comment7.params=A\ i
+comment7.target=boolean\ is_valid_state(Automata.FSAe,\ int)
+comment8.params=A\ a
+comment8.target=boolean\ is_valid_symbol(Automata.FSAe,\ int)
+comment9.params=eClos
+comment9.target=void\ print_eclosure(boolean[][])
+numComments=12
